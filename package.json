@@ -1,0 +1,65 @@
+{
+  "name": "nexus-platform-core",
+  "version": "0.1.0",
+  "description": "A comprehensive multi-tenant legal operations platform",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter=web dev",
+    "build": "pnpm --filter=web build",
+    "start": "pnpm --filter=web start",
+    "lint": "pnpm --filter=web lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "type-check": "pnpm --filter=web type-check",
+    "test": "pnpm --filter=web test",
+    "test:watch": "pnpm --filter=web test:watch",
+    "test:coverage": "pnpm --filter=web test:coverage",
+    "test:e2e": "pnpm --filter=web test:e2e",
+    "test:e2e:headed": "pnpm --filter=web test:e2e:headed",
+    "db:migrate": "pnpm --filter=web db:migrate",
+    "db:seed": "pnpm --filter=web db:seed",
+    "db:reset": "pnpm --filter=web db:reset",
+    "db:studio": "pnpm --filter=web db:studio",
+    "clean": "rm -rf node_modules dist build .next out coverage .turbo",
+    "clean:all": "pnpm clean && pnpm --filter=\\* clean",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "packages/shared-types",
+    "packages/ui",
+    "packages/utils",
+    "packages/config"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "legal",
+    "operations",
+    "multi-tenant",
+    "document-management",
+    "case-management",
+    "nextjs",
+    "supabase",
+    "typescript"
+  ],
+  "author": "PCLSADMIN",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PCLSADMIN/nexus-platform-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PCLSADMIN/nexus-platform-core/issues"
+  },
+  "homepage": "https://github.com/PCLSADMIN/nexus-platform-core#readme"
+}
